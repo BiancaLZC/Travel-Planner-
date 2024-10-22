@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styles from './DailyPlanner.module.css';
 
 const DailyPlanner = () => {
   const [days, setDays] = useState([{ day: 1, activities: [] }]);
@@ -15,20 +16,24 @@ const DailyPlanner = () => {
   };
 
   return (
-    <div>
+    <div className={styles.plannerContainer}>
       <h2>Plan your trip</h2>
       {days.map((day, index) => (
-        <div key={index}>
+        <div key={index} className={styles.dayCard}>
           <h3>Day {day.day}</h3>
-          <ul>
+          <ul className={styles.activityList}>
             {day.activities.map((activity, idx) => (
               <li key={idx}>{activity}</li>
             ))}
           </ul>
-          <button onClick={() => addActivity(index)}>Add Activity</button>
+          <button className={styles.addButton} onClick={() => addActivity(index)}>
+            Add Activity
+          </button>
         </div>
       ))}
-      <button onClick={addDay}>Add Another Day</button>
+      <button className={styles.addDayButton} onClick={addDay}>
+        Add Another Day
+      </button>
     </div>
   );
 };

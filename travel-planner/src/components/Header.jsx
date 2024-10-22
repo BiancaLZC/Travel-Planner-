@@ -1,20 +1,15 @@
 import React from 'react';
+import styles from './Header.module.css';
 
 const Header = () => {
-    return (
-        <header style={headerStyle}>
-            <h1>Travel Planner</h1>
-            <nav>
-                <a href="/">Home</a> | <a href="/plan">Plan Your Trip</a>
-            </nav>
-        </header>
-    );
-};
-const headerStyle = {
-  background: '#333',
-  color: '#fff',
-  padding: '10px',
-  textAlign: 'center',
+  return (
+    <header className={styles.header}>
+      <h1>Travel Planner</h1>
+      <nav className={styles.nav}>
+        <a href="/">Home</a> | <a href="/plan">Plan Your Trip</a>
+      </nav>
+    </header>
+  );
 };
 
 export default Header;
